@@ -1,113 +1,45 @@
-PFont f;
-int scene=0;//or new slide, etc...
+
+int x=100;
+int y=100;
+boolean over=false;
+String message="Welcome!";
+int scene;
+PImage pi=new PImage();
 
 void setup() {
-  size(1000, 350); 
-  fill(0);
-  f=createFont("AmericanTypewriter", 22);
-  textFont(f);
+  size(800, 600);
+  pi=loadImage("images/image"+0+".png");
 }
 void draw() {
-  background(150);
-  text("Press 0 to start over. ", 10, 10, 400, 100);
-  if (scene==0) {
-    scene0();
-  } else if (scene==1) {
-    scene1();
-  } else if (scene==2) {
-    scene2();
-  } else if (scene==3) {
-    scene3();
-  } else if (scene==4) {
-    scene4();
-  }
-}
-
-void keyTyped() {
-  if (key=='0') {
-    scene=0;
-  } else if ((key=='1')) {
-    scene=1;
-  } else if (key=='2') {
-    scene=2;
-  } else if (key=='3') {
-    scene=3;
-  } else if (key=='4') {
-    scene=4;
+  background(0);
+  text(message, 50, 50, y, 20);
+  image(pi, x*6, y, 100, 80);
+  if  (mouseX>600&&mouseX<600+100&&mouseY>y&&mouseY<y+80) {
+    cursor(HAND);
+    over=true;
+  } else {
+    cursor(ARROW); 
+    message="Welcome!";
   }
 }
 void mousePressed() {
-  int num=(int)(Math.random()*5);
-  if (num==0) {
+  if (message.equals("Welcome")&&over==true) {
     scene=0;
-  } else if ((num==1)) {
+    message="this is slide 0";
+    text(message, 50, 50, 200, 20);
+  } else if (scene==0&&over==true) {
     scene=1;
-  } else if (num==2) {
+    message="this is slide 1";
+    text(message, 50, 50, 200, 20);
+  } else if (scene==1&&over==true) {
     scene=2;
-  } else if (num==3) {
-    scene=3;
-  } else if (num==4) {
-    scene=4;
+    message="this is slide 2";
+    text(message, 50, 50, 200, 20);
+  }else if (scene==2&&over==true) {
+    scene=0;
+    message="this is slide 0 again";
   }
 }
-void keyPressed() {
-  if (keyPressed) {
-    if (keyCode==RIGHT) {
-      println("hello");
-      if (scene==0) {
-        scene=1;
-      } else if (scene==1) {
-        scene=2;
-      } else if (scene==2) {
-        scene=3;
-      } else if (scene==3) {
-        scene=0;
-      }
-    }
-    
-     if (keyCode==LEFT) {
-      println("hello");
-      if (scene==0) {
-        scene=3;
-      } else if (scene==3) {
-        scene=2;
-      } else if (scene==2) {
-        scene=1;
-      } else if (scene==1) {
-        scene=0;
-      }
-    }
-  }
-}
-
-///these scenes/slides could be different chapters, etc...
-void scene0() {
-  fill(0, 0, 0);
-  ellipse(50, 200, 100, 100); 
-  text("Scene 0 where the entire project is described including a user input interface...buttons, menus, sliders, etc. ", 400, 5, 470, 100);
-}
-void scene1() {
-  fill(255, 0, 0);
-  ellipse(700, 200, 100, 100); 
-  rect(500, 200, 100, 100);
-  text("Welcome to scene 1! ", 700, 5, 300, 100);
-}
-
-void scene2() {
-  fill(0, 255, 0);
-  ellipse(400, 200, 100, 100); 
-  rect(600, 200, 100, 100);
-  text("Welcome to scene 2! ", 700, 5, 300, 100);
-}
-
-void scene3() {
-  fill(0, 0, 255);
-  ellipse(500, 200, 100, 100); 
-  text("Welcome to scene 3! ", 700, 5, 300, 100);
-}
-
-void scene4() {
-  fill(255, 0, 0);
-  ellipse(400, 200, 100, 100); 
-  text("Welcome to scene 4! ", 700, 5, 300, 100);
+void mouseReleased() {
+  over=false;
 }
