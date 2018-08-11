@@ -19,9 +19,7 @@ void setup() {
   pi=new PImage();
   p=loadImage("images/image3.png");
   pi=loadImage("images/image2.png");
-   pi=loadImage("images/image0.png");
-    pi=loadImage("images/image1.jpg");
-  //image(pi, x*3, y+200, 50, 50);
+
   textFont(f);
 }
 void draw() {
