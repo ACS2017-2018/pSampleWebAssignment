@@ -17,6 +17,7 @@ void setup() {
   message="Welcome!";
   pi=new PImage();
   pi=loadImage("images/image0.png");
+  image(pi, x*3, y+200, 450, 350);
   textFont(f);
 }
 void draw() {
