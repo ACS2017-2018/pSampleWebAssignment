@@ -44,8 +44,8 @@ void draw() {
     pi=loadImage("images/image3.png");
   } 
   text(message, 150, 150);
-  image(pi, x*3, y+200, 150, 150);
-  image(p, x-50, y+200, 450, 350);
+  image(pi, x*3, y+200, 450, 350);
+  image(p, x-50, y+200, 150, 150);
 }
 void mousePressed() {
   if (slide==0&&over==true&&left==false) {
