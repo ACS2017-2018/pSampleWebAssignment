@@ -16,8 +16,8 @@ void setup() {
   f = createFont("Georgia", 56);
   message="Welcome!";
   pi=new PImage();
-  pi=loadImage("images/tree.jpg");
-  image(pi, x*3, y+200, 50, 50);
+  //pi=loadImage("images/tree.jpg");
+  //image(pi, x*3, y+200, 50, 50);
   textFont(f);
 }
 void draw() {
@@ -40,7 +40,7 @@ void draw() {
     pi=loadImage("images/image3.png");
   } 
   text(message, 150, 150);
-  image(pi, x*3, y+200, 450, 350);
+  image(pi, x*3, y+200, 150, 150);
 }
 void mousePressed() {
   if (slide==0&&over==true&&left==false) {
