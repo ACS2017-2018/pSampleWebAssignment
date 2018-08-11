@@ -26,16 +26,16 @@ void draw() {
   fill(255, 0, 0);
   if (slide==0) {
     message="Welcome!";
-    pi=loadImage("data/image0.png");
+    pi=loadImage("images/image0.png");
   } else if (slide==1) {
     message="this is slide 1";
-    pi=loadImage("data/image1.png");
+    pi=loadImage("images/image1.png");
   } else if (slide==2) {
     message="this is slide 2";
-    pi=loadImage("data/image2.png");
+    pi=loadImage("images/image2.png");
   } else if (slide==3) {
     message="this is slide 3";
-    pi=loadImage("data/image3.png");
+    pi=loadImage("images/image3.png");
   } 
   text(message, 150, 150);
   image(pi, x*3, y+200, 450, 350);
