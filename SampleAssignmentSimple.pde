@@ -1,45 +1,91 @@
-
-int x=100;
-int y=100;
-boolean over=false;
-String message="Welcome!";
-int scene;
-PImage pi=new PImage();
+int x;
+int y;
+boolean over;
+boolean left;
+String message;
+int slide;
+PFont f;
+PImage pi;
 
 void setup() {
   size(800, 600);
-  pi=loadImage("images/image"+0+".png");
+  x=100;
+  y=100;
+  over=false;
+  left=false;
+  f = createFont("Georgia", 56);
+  message="Welcome!";
+  pi=new PImage();
+  textFont(f);
 }
 void draw() {
   background(0);
-  text(message, 50, 50, y, 20);
-  image(pi, x*6, y, 100, 80);
-  if  (mouseX>600&&mouseX<600+100&&mouseY>y&&mouseY<y+80) {
-    cursor(HAND);
-    over=true;
-  } else {
-    cursor(ARROW); 
+  buttons();
+
+
+  fill(255, 0, 0);
+  if (slide==0) {
     message="Welcome!";
-  }
+    pi=loadImage("data/image0.png");
+  } else if (slide==1) {
+    message="this is slide 1";
+    pi=loadImage("data/image1.png");
+  } else if (slide==2) {
+    message="this is slide 2";
+    pi=loadImage("data/image2.png");
+  } else if (slide==3) {
+    message="this is slide 3";
+    pi=loadImage("data/image3.png");
+  } 
+  text(message, 150, 150);
+  image(pi, x*3, y+200, 450, 350);
 }
 void mousePressed() {
-  if (message.equals("Welcome")&&over==true) {
-    scene=0;
-    message="this is slide 0";
-    text(message, 50, 50, 200, 20);
-  } else if (scene==0&&over==true) {
-    scene=1;
-    message="this is slide 1";
-    text(message, 50, 50, 200, 20);
-  } else if (scene==1&&over==true) {
-    scene=2;
-    message="this is slide 2";
-    text(message, 50, 50, 200, 20);
-  }else if (scene==2&&over==true) {
-    scene=0;
-    message="this is slide 0 again";
+  if (slide==0&&over==true&&left==false) {
+    slide=1;
+  } else if (slide==1&&over==true&&left==false) {
+    slide=2;
+  } else if (slide==2&&over==true&&left==false) {
+    slide=3;
+  } else if (slide==3&&over==true&&left==false) {
+    slide=0;
+  } else if (slide==1&&over==true&&left==true) {
+    slide=0;
+  } else if (slide==2&&over==true&&left==true) {
+    slide=1;
+  } else if (slide==3&&over==true&&left==true) {
+    slide=2;
   }
 }
 void mouseReleased() {
   over=false;
+}
+
+void buttons() {
+  //right
+  fill(0, 0, 200);
+  rect(width-100, 100, 100, 50);
+  fill(255);
+  text(">", width-60, y+40);
+
+  //left
+  fill(0, 0, 200);
+  rect(width-210, 100, 100, 50);
+  fill(255);
+  text("<", width-180, y+40);
+
+  //right
+  if  (mouseX>width-100&&mouseX<width&&mouseY>y&&mouseY<y+50) {
+    cursor(HAND);
+    over=true;
+    left=false;
+    //left
+  } else if (mouseX>width-210&&mouseX<width-110&&mouseY>y&&mouseY<y+50) {
+    cursor(HAND);
+    over=true;
+    left=true;
+  } else {
+    over=false;
+    cursor(ARROW);
+  }
 }
