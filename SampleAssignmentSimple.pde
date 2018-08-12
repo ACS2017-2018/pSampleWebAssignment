@@ -51,20 +51,22 @@ void draw() {
    image(pi, x*3, y+200, 450, 350);
 }
 void mousePressed() {
-  if (slide==0&&over==true&&left==true) {
-    slide=1;
-  } else if (slide==1&&over==true&&left==false) {
-    slide=2;
-  } else if (slide==2&&over==true&&left==false) {
-    slide=3;
-  } else if (slide==3&&over==true&&left==false) {
+  if (slide==0&&over==true&&left==false) {
     slide=0;
-  } else if (slide==1&&over==true&&left==true) {
+  } else if (slide==1&&over==true&&left==false) {
+    slide=1;
+  } else if (slide==2&&over==true&&left==false) {
+    slide=2;
+  } else if (slide==3&&over==true&&left==false) {
+    slide=3;
+  } else if (slide==3&&over==true&&left==true) {
     slide=0;
   } else if (slide==2&&over==true&&left==true) {
     slide=1;
-  } else if (slide==3&&over==true&&left==true) {
-    slide=2;
+  } else if (slide==1&&over==true&&left==true) {
+    slide=0;
+  } else if (slide==0&&over==true&&left==true) {
+    slide=3;
   }
 }
 void mouseReleased() {
