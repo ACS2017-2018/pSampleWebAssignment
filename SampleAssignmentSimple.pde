@@ -18,7 +18,7 @@ void setup() {
   message="Welcome!";
 
   p=loadImage("images/image3.png");
-  //pi=loadImage("images/image2.png");
+  pi=loadImage("images/image0.png");
 
   textFont(f);
 }
@@ -30,7 +30,7 @@ void draw() {
   fill(255, 0, 0);
   if (slide==0) {
     message="Welcome!";
-    pi=loadImage("images/image2.png");
+    //pi=loadImage("images/image2.png");
   } else if (slide==1) {
     message="this is slide 1";
     pi=loadImage("images/image1.png");
