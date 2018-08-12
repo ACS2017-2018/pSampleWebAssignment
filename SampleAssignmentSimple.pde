@@ -58,7 +58,7 @@ void mousePressed() {
   } else if (slide==2&&over==true&&left==true) {
     slide=1;
     pi=loadImage("images/image1.png");
-  } else if (slide=1&&over==true&&left==true) {
+  } else if (slide==1&&over==true&&left==true) {
     slide=0;
     pi=loadImage("images/image0.png");
   }
