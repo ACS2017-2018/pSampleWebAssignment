@@ -38,11 +38,11 @@ void draw() {
     
   } else if (slide==2) {
     message="this is slide 2";
-    pi=loadImage("images/image2.png");
+   
     
   } else if (slide==3) {
     message="this is slide 3";
-    pi=loadImage("images/image3.png");
+   
     
   } 
   text(message, 150, 150);
@@ -56,18 +56,25 @@ void mousePressed() {
     pi=loadImage("images/image1.png");
   } else if (slide==1&&over==true&&left==false) {
     slide=2;
+     pi=loadImage("images/image2.png");
   } else if (slide==2&&over==true&&left==false) {
     slide=3;
+     pi=loadImage("images/image3.png");
   } else if (slide==3&&over==true&&left==false) {
     slide=0;
+     pi=loadImage("images/image0.png");
   } else if (slide==0&&over==true&&left==true) {
     slide=3;
+     pi=loadImage("images/image3.png");
   } else if (slide==3&&over==true&&left==true) {
     slide=2;
+     pi=loadImage("images/image2.png");
   } else if (slide==2&&over==true&&left==true) {
     slide=1;
+     pi=loadImage("images/image1.png");
   } else if (slide=1&&over==true&&left==true) {
     slide=0;
+     pi=loadImage("images/image0.png");
   }
 }
 void mouseReleased() {
