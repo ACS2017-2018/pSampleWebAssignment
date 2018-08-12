@@ -59,14 +59,14 @@ void mousePressed() {
     slide=3;
   } else if (slide==3&&over==true&&left==false) {
     slide=0;
-  } else if (slide==3&&over==true&&left==true) {
-    slide=0;
-  } else if (slide==2&&over==true&&left==true) {
-    slide=1;
-  } else if (slide==1&&over==true&&left==true) {
-    slide=0;
   } else if (slide==0&&over==true&&left==true) {
     slide=3;
+  } else if (slide==3&&over==true&&left==true) {
+    slide=2;
+  } else if (slide==2&&over==true&&left==true) {
+    slide=1;
+  } else if (slide=1&&over==true&&left==true) {
+    slide=0;
   }
 }
 void mouseReleased() {
