@@ -31,15 +31,19 @@ void draw() {
   if (slide==0) {
     message="Welcome!";
     //pi=loadImage("images/image2.png");
+    image(pi, x*3, y+200, 450, 350);
   } else if (slide==1) {
     message="this is slide 1";
     pi=loadImage("images/image1.png");
+    image(pi, x*3, y+200, 450, 350);
   } else if (slide==2) {
     message="this is slide 2";
     pi=loadImage("images/image2.png");
+    image(pi, x*3, y+200, 450, 350);
   } else if (slide==3) {
     message="this is slide 3";
     pi=loadImage("images/image3.png");
+    image(pi, x*3, y+200, 450, 350);
   } 
   text(message, 150, 150);
  
