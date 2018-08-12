@@ -16,7 +16,6 @@ void setup() {
   f = createFont("Georgia", 56);
   message="Welcome!";
   pi=loadImage("images/image0.png");
-
   textFont(f);
 }
 void draw() {
