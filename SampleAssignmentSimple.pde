@@ -34,7 +34,7 @@ void draw() {
     
   } else if (slide==1) {
     message="this is slide 1";
-    pi=loadImage("images/image1.png");
+    
     
   } else if (slide==2) {
     message="this is slide 2";
@@ -53,6 +53,7 @@ void draw() {
 void mousePressed() {
   if (slide==0&&over==true&&left==false) {
     slide=1;
+    pi=loadImage("images/image1.png");
   } else if (slide==1&&over==true&&left==false) {
     slide=2;
   } else if (slide==2&&over==true&&left==false) {
